@@ -1,0 +1,15 @@
+<div class="container">
+
+  <div>
+    <h1>Create a new coktail</h1>
+    <%= simple_form_for(@cocktail) do |f| %>
+      <%= f.input :name %>
+      <%= f.submit "Save your coktail" %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= link_to 'Back to cocktails list', cocktails_path %>
+  </div>
+
+</div>
