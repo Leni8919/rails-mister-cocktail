@@ -1,18 +1,24 @@
 
  <div class="banner">
 <h1>Leni's Cocktails</h1>
+<span id="banner-typed-text"></span>
 </div>
 
 <div class="container">
 
 <div class="title-centered">
-  <h1>Our cocktail list</h1>
+  <h1>Our cocktails list</h1>
+  <p>Your go-to spot to get tipsy the hip way.</p>
+  <p>We don't get drunk, we are get more interesting.</p>
+  <p>Join us and contribute by posting your favorite beverages! <i class="fas fa-cocktail"></i></p>
+  <%= link_to "Add your poison", new_cocktail_path, class: "btn btn-ghost mt-4" %>
 </div>
+
 
 <div class="cards">
       <% @cocktails.each do |cocktail| %>
         <%= link_to (cocktail_path(cocktail)) do  %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          <div class="card-category" style="background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url(<%= cl_image_path cocktail.photo %>)">
             <%= cocktail.name %>
           </div>
         <% end %>
@@ -25,6 +31,6 @@
 
 
 
-
 </div>
+
 

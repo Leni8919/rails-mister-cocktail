@@ -1,15 +1,22 @@
 <div class="container">
 
-  <div>
-    <h1>Create a new coktail</h1>
-    <%= simple_form_for(@cocktail) do |f| %>
-      <%= f.input :name %>
-      <%= f.submit "Save your coktail" %>
-    <% end %>
+  <div class="new-cocktail-page">
+
+    <h1>Send us your own drinkable masterpiece</h1>
+
+    <div class="form-new col-6 offset-3">
+      <h2>What's your cocktail called, darling ?</h2>
+
+      <%= simple_form_for(@cocktail) do |f| %>
+        <%= f.input :name %>
+        <h2>How pretty is it ? Send us a pic !</h2>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <p>You'll be asked to send you recipe and share your secret ingredients on the next page. Hang up tight, my friend!</p>
+        <%= f.submit "Save your coktail", class: "btn-ghost" %>
+      <% end %>
+    </div>
   </div>
 
-  <div>
-    <%= link_to 'Back to cocktails list', cocktails_path %>
-  </div>
 
 </div>
