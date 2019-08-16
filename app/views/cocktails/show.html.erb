@@ -9,15 +9,15 @@
 
       <div class="cocktail-details">
 
-        <div class="card-category col-3" style="background-image: url(<%= cl_image_path @cocktail.photo %>)">
+        <div class="card-category" style="background-image: url(<%= cl_image_path @cocktail.photo %>)">
         </div>
 
-        <div class="col-3">
+        <div class="">
           <h3>Instructions</h3>
           <p>blabla</p>
         </div>
 
-        <div class="col-3">
+        <div class="">
         <h3>Ingredients list</h3>
           <ul>
             <% @cocktail.doses.each do |dose| %>
