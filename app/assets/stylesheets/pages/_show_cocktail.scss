@@ -13,6 +13,14 @@
   grid-gap: 30px;
 }
 
+.form-container {
+  display: flex;
+  align-items: top;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
+
 .cocktail-details h3 {
   font-size: 20px;
   word-wrap: break-word;
@@ -23,11 +31,29 @@
   word-wrap: break-word;
 }
 
+.cocktail-details li {
+  color: $mygrey;
+}
+
+a.btn-ghost {
+  text-decoration: none;
+}
+
+.form-dose h3 {
+  font-size: 20px;
+  color: $mydarkergrey;
+}
+
 
 
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
   .cocktail-details {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+
+  .form-container {
     grid-template-columns: 1fr;
     grid-gap: 10px;
   }
