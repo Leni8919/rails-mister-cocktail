@@ -9,16 +9,16 @@
 
       <div class="cocktail-details">
 
-        <div class="card-category" style="background-image: url(<%= cl_image_path @cocktail.photo %>)">
-        </div>
+
+
+          <div class="card-category" style="background-image: url(<%= @cocktail.photo.file.nil? ? 'http://res.cloudinary.com/dovv283mu/image/upload/v1566050381/cocktail_default_fik3sg.jpg' : @cocktail.photo %>)">
+          </div>
 
         <div class="">
-          <h3>Instructions</h3>
-          <p>blabla</p>
-        </div>
+          <h3>Ingredients</h3>
+          <% if @cocktail.ingredients == [] %>
+          <p>No ingredients are listed yet... Start adding them !</p>
 
-        <div class="">
-        <h3>Ingredients list</h3>
           <ul class="list-unstyled">
             <% @cocktail.doses.each do |dose| %>
             <li> <%= dose.ingredient.name  %> - <%= dose.description %> <%= link_to 'Delete', dose_path(dose),
@@ -27,7 +27,18 @@
             </li>
             <% end %>
           </ul>
+          <% end %>
         </div>
+
+        <div class="">
+          <h3>Instructions</h3>
+          <% if @cocktail.instructions == ""%>
+            <p>No intructions yet... Would you do us the honnor ?</p>
+            <% else %>
+            <p><%= @cocktail.instructions %></p>
+          <% end %>
+        </div>
+
 
       </div>
 
@@ -35,9 +46,12 @@
     <div class="form-dose">
       <%= render 'shared/form_for_dose' %>
     </div>
+
+
   </div>
 
 </div>
+
 
 
 

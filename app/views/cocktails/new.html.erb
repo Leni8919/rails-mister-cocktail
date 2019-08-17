@@ -5,10 +5,13 @@
     <h1 class="text-centered" id="page-new-title">Send us your own drinkable masterpiece</h1>
 
     <div class="form-new col-sm-10 col-lg-6">
-      <h2>What's your cocktail called, darling ?</h2>
+
 
       <%= simple_form_for(@cocktail) do |f| %>
+        <h2>What's your cocktail called, darling ?</h2>
         <%= f.input :name %>
+        <h2>What do you have to say about it ?</h2>
+        <%= f.input :instructions %>
         <h2>How pretty is it ? Send us a pic !</h2>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
