@@ -23,4 +23,10 @@
   color: $myred;
   padding-left: 10px;
   font-size: 30px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.navbar i:hover {
+  opacity:1;
 }

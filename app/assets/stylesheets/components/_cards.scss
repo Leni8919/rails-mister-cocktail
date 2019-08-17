@@ -24,6 +24,10 @@
   margin-bottom: 60px;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
