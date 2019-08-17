@@ -32,7 +32,7 @@
 
         <div class="">
           <h3>Instructions</h3>
-          <% if @cocktail.instructions == ""%>
+          <% if @cocktail.instruction == "" %>
             <p>No intructions yet... Would you do us the honnor ?</p>
             <% else %>
             <p><%= @cocktail.instructions %></p>
