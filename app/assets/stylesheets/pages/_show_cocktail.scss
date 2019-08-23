@@ -19,6 +19,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
+  margin-bottom: 30px;
+
 }
 
 .cocktail-details h3 {
@@ -39,9 +41,23 @@ a.btn-ghost {
   text-decoration: none;
 }
 
-.form-dose h3 {
+.back-btn {
+  margin-bottom: 30px;
+}
+
+.form-container h3 {
   font-size: 20px;
   color: $mydarkergrey;
+}
+
+.form-container .btn-ghost {
+  position: absolute;
+
+}
+
+.cocktail-pic-container {
+  display:flex;
+  justify-content: center;
 }
 
 

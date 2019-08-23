@@ -1,6 +1,5 @@
 
-<div class="form-container">
-  <div class="col-sm-10 col-lg-6">
+  <div class="">
     <h3>Want to add an ingredient ?</h3>
     <%= simple_form_for [@cocktail, @dose] do |f| %>
     <%= f.input :ingredient_id, collection: Ingredient.all %>
@@ -10,4 +9,3 @@
     <% end %>
   </div>
 
-</div>

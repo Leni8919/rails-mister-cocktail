@@ -1,8 +1,18 @@
 <div class="container">
 
 <div class="page-layout">
-  <%= link_to 'Back to cocktails list', cocktails_path, class:"btn-ghost" %>
 
+  <div class="back-btn">
+    <%= link_to 'Back to cocktails list', cocktails_path, class:"btn-ghost" %>
+  </div>
+
+  <div class="cocktail-pic-container">
+    <% if @cocktail.photo.file.nil? %>
+      <img src='http://res.cloudinary.com/dovv283mu/image/upload/v1566050381/cocktail_default_fik3sg.jpg' alt="a cocktail image">
+    <% else %>
+    <% end %>
+    <%= cl_image_tag @cocktail.photo, crop: :fill %>
+  </div>
 
       <h1 class="show-title text-centered">The <%= @cocktail.name %></h1>
       <p class="text-centered">by Leni's Cocktails</p>
@@ -10,23 +20,21 @@
       <div class="cocktail-details">
 
 
-
-          <div class="card-category" style="background-image: url(<%= @cocktail.photo.file.nil? ? 'http://res.cloudinary.com/dovv283mu/image/upload/v1566050381/cocktail_default_fik3sg.jpg' : @cocktail.photo %>)">
-          </div>
-
-        <div class="">
+        <div>
           <h3>Ingredients</h3>
-          <% if @cocktail.ingredients == [] %>
-          <p>No ingredients are listed yet... Start adding them !</p>
 
-          <ul class="list-unstyled">
-            <% @cocktail.doses.each do |dose| %>
-            <li> <%= dose.ingredient.name  %> - <%= dose.description %> <%= link_to 'Delete', dose_path(dose),
-                method: 'delete',
-                data: { confirm: "Are you sure?" } %>
-            </li>
-            <% end %>
-          </ul>
+          <% if @cocktail.ingredients == [] %>
+            <p>No ingredients are listed yet... Start adding them !</p>
+
+          <% else %>
+            <ul class="list-unstyled">
+              <% @cocktail.doses.each do |dose| %>
+              <li> <%= dose.ingredient.name  %> - <%= dose.description %> <%= link_to 'Delete', dose_path(dose),
+                  method: 'delete',
+                  data: { confirm: "Are you sure?" } %>
+              </li>
+              <% end %>
+            </ul>
           <% end %>
         </div>
 
@@ -38,14 +46,33 @@
             <p><%= @cocktail.instructions %></p>
           <% end %>
         </div>
+    </div>
 
 
+    <div class="form-container">
+      <div class="">
+        <%= render 'shared/form_for_dose' %>
       </div>
 
-
-    <div class="form-dose">
-      <%= render 'shared/form_for_dose' %>
+        <div class="">
+        <%= render 'shared/form_for_instructions' %>
+      </div>
     </div>
+
+
+
+    <div class="">
+      <a class="btn-ghost" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" id="btn-add-ingredient">
+        Link with href
+      </a>
+
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+      </div>
+    </div>
+  </div>
+
 
 
   </div>
